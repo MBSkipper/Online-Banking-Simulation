@@ -1,7 +1,8 @@
 
 /*Requirements
     - Account Balance
-    -Transfer funds
+    - Account statement (Transactions)
+    - Transfer funds
         - Transfer in (Credit)
         - Transfer out (Debit)
     
@@ -10,3 +11,5 @@
     const eyeBtn = getElementById("see-account-no")
     }
     */
+
+    
