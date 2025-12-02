@@ -6,10 +6,27 @@
         - Transfer in (Credit)
         - Transfer out (Debit)
     
-    
-    function toggleAccountNo {
-    const eyeBtn = getElementById("see-account-no")
-    }
     */
+
+    const accountNumber = '2037889316'
+
+    const eyeButton = document.getElementById('see-account-number')
+    const accountNoText = document.getElementById('account-num-text')
+    let accountNoVisible = false
+    
+        eyeButton.addEventListener('click', () => {
+            eyeButton.classList.toggle('fa-eye')
+            eyeButton.classList.toggle('fa-eye-slash')
+            accountNoVisible = !accountNoVisible
+        
+        if(accountNoVisible) {
+            accountNoText.innerText = accountNumber
+            } else {
+            accountNoText.innerText = `*********${accountNumber.slice(-3)}`
+            }
+        })
+
+        
+
 
     
