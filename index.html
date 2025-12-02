@@ -56,23 +56,51 @@
     
 <!--_______________________MAIN SECTION _____________________--->
 
-<!-- ________Side bar (right)_______-->
-    <div class="container mt-5">
+<!-- ________Side bar (left)_______-->
+    <div class="container mt-4">
         <div class="row">
             <div class="col-4">
                 <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Home</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+
+                    <a class="list-group-item list-group-item-action list-group-item-secondary active" id="account-summary-list" data-bs-toggle="list" href="#account-summary" role="tab" aria-controls="account-summary-list">Account Summary</a>
+
+                    <a class="list-group-item list-group-item-action list-group-item-secondary " id="transfer-in-list" data-bs-toggle="list" href="#transfer-in" role="tab" aria-controls="transfer-in-list">Transfer In</a>
+
+                    <a class="list-group-item list-group-item-action list-group-item-secondary " id="transfer-out-list" data-bs-toggle="list" href="#transfer-out" role="tab" aria-controls="transfer-out-list">Transfer Out</a>
+    
                 </div>
             </div>
+
             <div class="col-8">
                 <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+
+                    <!--*** Account Summary Page*** -->
+                    <div class="tab-pane fade show active" id="account-summary" role="tabpanel" aria-labelledby="account-summary-list">
+
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--*** Transfer In Page*** -->
+                    <div class="tab-pane fade" id="transfer-in" role="tabpanel" aria-labelledby="transfer-in-list">Transfer In          
+                    </div>
+
+                    <!--*** Transfer Out Page*** -->
+                    <div class="tab-pane fade" id="transfer-out" role="tabpanel" aria-labelledby="transfer-out-list">Transfer Out
+                    </div>
+
                 </div>
             </div>
         </div>
