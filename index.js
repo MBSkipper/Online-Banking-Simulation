@@ -47,6 +47,9 @@
 
 
         function addTransferIntoList() {
+
+            const amountToDeposit = document.getElementById('amount-in').value
+
             const listGroupItem  = document.createElement('a') //the transaction list = series of anchor tags
             listGroupItem.classList.add('list-group-item', 'list-group-item-action') //so it represents the anchor tag
             
@@ -60,7 +63,7 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-success')
-            amount.innerText = "$12000.00"
+            amount.innerText = `£${amountToDeposit}`
             
             topPart.append(h5, amount)
 
