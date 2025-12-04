@@ -98,7 +98,6 @@
                             </div>
                         </div>
                         
-                        *_*_*_*_*_accordion start
 
                         <div class="accordion" id="accordionExample"> <!--start of accordion-->
                             
@@ -110,7 +109,7 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show p-2" data-bs-parent="#accordionExample">
                                     
-                                    **************** list group start
+                                    <!-- List group start - ie start of transactions list -->
                                     <div class="list-group" id="transaction-list"> <!-- Transactions summary inside this div  -->
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
@@ -148,18 +147,14 @@
                                             </div>                                           
                                         </a>
 
-                                       
                                     </div>
-                                    <!--end of transactions section -->
-                                     ***************** list group end 
-
+                                    <!--end of list group - transactions section -->
+                                    
                                 </div>
                             </div> <!--end of accordion item 1 --> 
                         
                         
                     </div> <!--end of accordian-->
-
-                        *_*_*_*_*_accordion end
 
                     </div>
 
@@ -167,15 +162,22 @@
                     <div class="tab-pane fade" id="transfer-in" role="tabpanel" aria-labelledby="transfer-in-list">
                         <h2 class="display-5">Transfer In (Deposit)</h2>
                         
-                        <!--Start of input form-->
+                        <!-- Start of input form -->
                         
                         <div class="mb-3">
                             <label for="amount-in" class="form-label">Amount to deposit</label>
                             <input type="number" class="form-control" id="amount-in" placeholder="Amount to deposit">
                         </div>
                         
-                        <button type="button" class="btn btn-dark" onclick="addTransferIntoList()">Deposit</button>
-                        <!--End of input form-->
+                        <button type="button" class="btn btn-dark" onclick="deposit()">Deposit</button>
+                        <!-- End of input form-->
+
+                        <!-- Alert -->
+                        <!--(note 'show' removed from class otherwise it always shows and see js function deposit() to add show class when visibility is required)-->
+                         <div class="alert alert-success alert-dismissible fade mt-3" role="alert" id="deposit-successful">
+                             Deposit successful!
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
 
                     </div>
                     

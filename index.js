@@ -29,26 +29,13 @@
     const transactionList = document.getElementById('transaction-list')
 
 
-        /**Transaction details from html 
-    
-        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Transfer from Ac 2065874532 </h5>
-                <div class="money fs-5 text-success">500.00</div> 
-            </div>
-            <p class="mb-1">Transfer in (CREDIT)</p>
-            <div class="d-flex w-100 justify-content-between">
-                <small>03/12/2025 09:13:25</small>
-                <small>Available balance: 66,666.66</small>
-            </div>                     
+        function deposit() {
 
-
-        */
-
-
-        function addTransferIntoList() {
-
-            const amountToDeposit = document.getElementById('amount-in').value
+            /******/
+            const amountIn = document.getElementById('amount-in')
+            const amountToDeposit = Number(amountIn.value)
+            amountIn.value = ''
+           /*******/
 
             const listGroupItem  = document.createElement('a') //the transaction list = series of anchor tags
             listGroupItem.classList.add('list-group-item', 'list-group-item-action') //so it represents the anchor tag
@@ -63,7 +50,7 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-success')
-            amount.innerText = `£${amountToDeposit}`
+            amount.innerText = `£${amountToDeposit.toFixed(2)}`
             
             topPart.append(h5, amount)
 
@@ -86,6 +73,8 @@
 
             listGroupItem.append(topPart, middlePart, lastPart)
             transactionList.append(listGroupItem)
+
+            document.getElementById('deposit-successful').classList.add('show')
 
         }
         
