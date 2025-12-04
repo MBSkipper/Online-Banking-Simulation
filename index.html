@@ -57,10 +57,13 @@
     
 <!--_______________________MAIN SECTION _____________________--->
 
-<!-- ________Side bar (left)_______-->
+
     <div class="container mt-4"> <!--main container div-->
-        <div class="row">
-            <div class="col-4">
+        
+        <div class="row"> 
+
+            <!------ Side bar (left) -------->
+            <div class="col-4"> 
                 <div class="list-group" id="list-tab" role="tablist">
 
                     <a class="list-group-item list-group-item-action list-group-item-secondary active" id="account-summary-list" data-bs-toggle="list" href="#account-summary" role="tab" aria-controls="account-summary-list">Account Summary</a>
@@ -108,7 +111,7 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show p-2" data-bs-parent="#accordionExample">
                                     
                                     **************** list group start
-                                    <div class="list-group"> <!-- Transactions summary inside this div  -->
+                                    <div class="list-group" id="transaction-list"> <!-- Transactions summary inside this div  -->
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">Mobile Payment: West Boatyard </h5>
@@ -165,32 +168,69 @@
 
 
                     <!--*** Transfer In Page *** -->
-                    <div class="tab-pane fade" id="transfer-in" role="tabpanel" aria-labelledby="transfer-in-list">Transfer In          
+                    <div class="tab-pane fade" id="transfer-in" role="tabpanel" aria-labelledby="transfer-in-list">
+                        <h2 class="display-5">Transfer In (Deposit)</h2>
+                        
+                        <!--Start of input form-->
+                        
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Amount to deposit</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Amount to deposit">
+                        </div>
+                        
+                        <button type="button" class="btn btn-dark">Deposit</button>
+                        <!--End of input form-->
+
                     </div>
+                    
+
 
                     <!--*** Transfer Out Page *** -->
-                    <div class="tab-pane fade" id="transfer-out" role="tabpanel" aria-labelledby="transfer-out-list">Transfer Out
+                    <div class="tab-pane fade" id="transfer-out" role="tabpanel" aria-labelledby="transfer-out-list">
+                        <h2 class="display-5">Transfer Out (Credit transaction)</h2>
+                        
+                        <div class="mb-5">
+                            <label for="exampleFormControlInput1" class="form-label">Type of transfer</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select type from list</option>
+                                <option value=" WIRE">Wire</option>
+                                <option value="ACH">ACH</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3"> 
+                            <label for="exampleFormControlInput1" class="form-label">Account holder name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. Jane Doe">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Sort code</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. 00-22-33">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Account number</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. 1234567890">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Amount to deposit</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="eg. £10.00">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Purpose of transfer</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. pay a bill">
+                        </div>
+                        
+                        <button type="button" class="btn btn-dark">Send money</button>
+                    
                     </div>
 
                 </div>
             </div>
-        </div>
+        </div> 
     </div> <!--  End of main container /div  -->
-
-
-
-<!-- ______________Main section_______________-->
-    <!--<div>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-                Account summary
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">Transfer in </button>
-                <button type="button" class="list-group-item list-group-item-action">Transfer out</button>
-                <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-                <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
-            </div>
-        </div> -->
 
 
 
