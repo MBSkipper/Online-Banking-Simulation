@@ -15,8 +15,8 @@
     let accountNoVisible = false
     
         eyeButton.addEventListener('click', () => {
-            eyeButton.classList.toggle('fa-eye')
             eyeButton.classList.toggle('fa-eye-slash')
+            eyeButton.classList.toggle('fa-eye')
             accountNoVisible = !accountNoVisible
         
         if(accountNoVisible) {

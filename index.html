@@ -84,9 +84,9 @@
                                     <img src="https://reqres.in/img/faces/2-image.jpg" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 100%">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body"> <!-- card content ie name, ac no. etc inside this div -->
+                                    <div class="card-body"> <!-- ac. card content ie name, ac no. etc inside this div -->
                                         <h5 class="card-body-title mb-3">Jane H Middleton</h5>
-                                        <p class="card-text mb-1">Account Number: <span id="account-num-text"> </span><i class="fa-solid fa-eye-slash" id="see-account-number"></i></p> <!--font awesome icon in this para-->
+                                        <p class="card-text mb-1">Account Number: <span id="account-num-text"> </span><i class="fa-solid fa-eye" id="see-account-number"></i></p> <!--font awesome icon in this para-->
                                         <p class="card-text mb-3">Sort Code: 88-56-72</p>
                                         <p class="card-text mb-0"><small class="text-body-secondary">Account balance</small></p>
                                         <p class="card-text fs-3">£20,000.00</p>
@@ -101,7 +101,7 @@
                             
                             <div class="accordion-item"> <!--start of accordion item 1-->
                                 <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Recent transactions
                                 </button>
                                 </h2>
@@ -112,28 +112,37 @@
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">Mobile Payment: West Boatyard </h5>
-                                                <div class="money fs-5">-£675.86</div> 
+                                                <div class="money fs-5 text-danger">-£675.86</div> 
                                             </div>
-                                            <p class="mb-1">Debit</p>
-                                            <small>03/12/2025 09:13:25</small>
+                                            <p class="mb-1">Transfer out (DEBIT)</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>03/12/2025 09:13:25</small>
+                                                <small>Available balance: 66,666.66</small>
+                                            </div>
                                         </a>
 
                                          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">Debit card transaction: Next clothing </h5>
-                                                <div class="money fs-5">-95.25</div> 
+                                                <div class="money fs-5 text-danger">-95.25</div> 
                                             </div>
-                                            <p class="mb-1">Debit</p>
-                                            <small>03/12/2025 09:13:25</small>
+                                            <p class="mb-1">Transfer out (DEBIT)</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>03/12/2025 09:13:25</small>
+                                                <small>Available balance: 66,666.66</small>
+                                            </div>                                          
                                         </a>
 
                                          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Transfer from Ac 9605874532 </h5>
-                                                <div class="money fs-5">200.00</div> 
+                                                <h5 class="mb-1">Transfer from Ac 2065874532 </h5>
+                                                <div class="money fs-5 text-success">500.00</div> 
                                             </div>
-                                            <p class="mb-1">Debit</p>
-                                            <small>03/12/2025 09:13:25</small>
+                                            <p class="mb-1">Transfer in (CREDIT)</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>03/12/2025 09:13:25</small>
+                                                <small>Available balance: 66,666.66</small>
+                                            </div>                                           
                                         </a>
 
                                        
