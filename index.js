@@ -26,7 +26,66 @@
             }
         })
 
+    const transactionList = document.getElementById('transaction-list')
+
+
+        /**Transaction details from html 
+    
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Transfer from Ac 2065874532 </h5>
+                <div class="money fs-5 text-success">500.00</div> 
+            </div>
+            <p class="mb-1">Transfer in (CREDIT)</p>
+            <div class="d-flex w-100 justify-content-between">
+                <small>03/12/2025 09:13:25</small>
+                <small>Available balance: 66,666.66</small>
+            </div>                     
+
+
+        */
+
+
+        function addTransferIntoList() {
+            const listGroupItem  = document.createElement('a') //the transaction list = series of anchor tags
+            listGroupItem.classList.add('list-group-item', 'list-group-item-action') //so it represents the anchor tag
+            
+            //-- Top part of transaction 
+            const topPart = document.createElement('div')
+            topPart.classList.add('d-flex', 'w-100', 'justify-content-between')
+
+            const h5 = document.createElement('h5')
+            h5.classList.add('mb-1')
+            h5.innerText = 'Deposit Transfer'
+
+            const amount = document.createElement('div')
+            amount.classList.add('money', 'fs-5', 'text-success')
+            amount.innerText = "$12000.00"
+            
+            topPart.append(h5, amount)
+
+            //-- Middle part of transaction 
+            const middlePart = document.createElement('p')
+            middlePart.classList.add('mb-1')
+            middlePart.innerText = 'Transfer in (CREDIT)'
+
+            //-- Last part of transaction 
+            const lastPart = document.createElement('div')
+            lastPart.classList.add('d-flex', 'w-100', 'justify-content-between')
+
+            const small1 = document.createElement('small')
+            small1.innerText = '03/12/2025 09:13:25'
+
+            const small2 = document.createElement('small')
+            small2.innerText = 'Available balance: 66,666.66'
+            
+            lastPart.append(small1, small2)
+
+            listGroupItem.append(topPart, middlePart, lastPart)
+            transactionList.append(listGroupItem)
+
+        }
         
 
 
-    
+   
