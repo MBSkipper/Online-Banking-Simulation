@@ -1,13 +1,4 @@
 
-/*Requirements
-    - Account Balance
-    - Account statement (Transactions)
-    - Transfer funds
-        - Transfer in (Credit)
-        - Transfer out (Debit)
-    
-    */
-
     const accountNumber = '2037889316'
 
     //-- Eye button --
@@ -28,6 +19,10 @@
             }
         })
 
+    // -- Account starting balance --
+    let balance = 10000
+    document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
+    
     // -- Start of transaction list --
     const transactionList = document.getElementById('transaction-list')
 
@@ -38,6 +33,11 @@
             const amountIn = document.getElementById('amount-in')
             const amountToDeposit = Number(amountIn.value) //note use of value to collect input data
             amountIn.value = ''
+            
+            //-- Update balance --
+            balance += amountToDeposit
+            document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
+            
 
            /*-- 2. Create element structure using DOM Methods 
             applies to rest of this function until alert code at bottom -- */
@@ -73,7 +73,7 @@
             small1.innerText = currentDateTime.toLocaleString()//'03/12/2025 09:13:25'
 
             const small2 = document.createElement('small')
-            small2.innerText = 'Available balance: 66,666.66'
+            small2.innerText = `Balance: £${balance}`
             
             lastPart.append(small1, small2)
 
@@ -81,19 +81,20 @@
             transactionList.append(listGroupItem)
 
             // 3. Show alert - show class added to alert to show it on screen
-            //document.getElementById('deposit-successful').classList.add('show') - original demo code
-            const alertBox = document.getElementById('deposit-successful');
+            document.getElementById('deposit-successful').classList.add('show') //- original demo code
+            
+            /* const alertBox = document.getElementById('deposit-successful');
             alertBox.classList.add('show');
             setTimeout(() => {
                 alertBox.classList.remove('show');
-                }, 3000);
+                }, 3000); */
 
         }
 
     // -- Send Money function
         function sendMoney() {
 
-            //-- 1. Collect form data and reset --
+            //-- 1. Collect form data, reset input and update webpage balance--
             //collect
             const amountToTransfer = Number(document.getElementById('amount-to-transfer').value) 
             const transferType = document.getElementById('transfer-type').value
@@ -102,6 +103,10 @@
             //reset
             const sendMoneyForm = document.getElementById('send-money-form')
             sendMoneyForm.reset() 
+
+            //-- Update balance
+            balance -= amountToTransfer
+            document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
 
 
            /*-- 2. Create element structure using DOM Methods 
@@ -140,7 +145,7 @@
             small1.innerText = currentDateTime.toLocaleString()
 
             const small2 = document.createElement('small')
-            small2.innerText = 'Available balance: 66,666.66'
+            small2.innerText = `Balance: £${balance}`
             
             lastPart.append(small1, small2)
 
@@ -148,15 +153,11 @@
             transactionList.append(listGroupItem)
 
             // 3. Show alert - show class added to alert to show it on screen
-            //document.getElementById('payment-successful').classList.add('show') - original demo code
-            const alertBox = document.getElementById('payment-successful');
-            alertBox.classList.add('show');
-            setTimeout(() => {
-                alertBox.classList.remove('show');
-                }, 3000);
-
+            document.getElementById('payment-successful').classList.add('show') 
 
         }
+
+        
 
 
    /* NOTES
@@ -195,6 +196,16 @@
             </div>                                           
         </a>
 
+        alert remove after 3 sec
+            const alertBox = document.getElementById('deposit-successful');
+            alertBox.classList.add('show');
+                setTimeout(() => {
+                alertBox.classList.remove('show');
+                }, 3000); 
 
-
+            const alertBox = document.getElementById('payment-successful');
+            alertBox.classList.add('show');
+            setTimeout(() => {
+                alertBox.classList.remove('show');
+                }, 3000);
     */
