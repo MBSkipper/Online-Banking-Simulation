@@ -69,7 +69,8 @@
             lastPart.classList.add('d-flex', 'w-100', 'justify-content-between')
 
             const small1 = document.createElement('small')
-            small1.innerText = '03/12/2025 09:13:25'
+            const currentDateTime = new Date()
+            small1.innerText = currentDateTime.toLocaleString()//'03/12/2025 09:13:25'
 
             const small2 = document.createElement('small')
             small2.innerText = 'Available balance: 66,666.66'
@@ -132,8 +133,11 @@
             const lastPart = document.createElement('div')
             lastPart.classList.add('d-flex', 'w-100', 'justify-content-between')
 
+            /*const small1 = document.createElement('small')
+            small1.innerText = '03/12/2025 09:13:25' */
             const small1 = document.createElement('small')
-            small1.innerText = '03/12/2025 09:13:25'
+            const currentDateTime = new Date()
+            small1.innerText = currentDateTime.toLocaleString()
 
             const small2 = document.createElement('small')
             small2.innerText = 'Available balance: 66,666.66'
