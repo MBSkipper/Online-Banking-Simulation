@@ -163,14 +163,27 @@
             transactionList.innerHTML += existingList
 
             // 3. Show alert - adds alert on transfer out (payment) screen - added each time a payment is made
-            document.getElementById('payment-successful').innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            document.getElementById('payment-successful').innerHTML = 
+            `<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                 Payment successful!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            `
+            </div>`
+            
+        }
 
-            /************* Alert - full html - 
+        
+
+
+   /* NOTES / COPIES OF REQUIRED CODE
+   
+   Requirements of website
+    - Account Balance
+    - Account statement (Transactions)
+    - Transfer funds
+        - Transfer in (Credit)
+        - Transfer out (Debit)
+
+    / -- Alert component -- full html - 
              * for deposit
              * <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="deposit-successful">
                     Deposit successful!
@@ -185,24 +198,8 @@
             </div>
 
 
-             * ***************
-             */
-
-        }
-
-        
-
-
-   /* NOTES
-   
-   Requirements of website
-    - Account Balance
-    - Account statement (Transactions)
-    - Transfer funds
-        - Transfer in (Credit)
-        - Transfer out (Debit)
     
-    Credit element requirements
+     -- Credit element requirements --
         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Debit card transaction: Next clothing </h5>
@@ -216,7 +213,7 @@
         </a>
 
 
-    Deposit element requirements
+     -- Deposit element requirements --
         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Transfer from Ac 2065874532 </h5>
@@ -228,13 +225,6 @@
                 <small>Available balance: 66,666.66</small>
             </div>                                           
         </a>
-
-        alert remove after 3 sec - removed because I could not get it to work with rest of app
-            const alertBox = document.getElementById('deposit-successful');
-            alertBox.classList.add('show');
-                setTimeout(() => {
-                alertBox.classList.remove('show');
-                }, 3000); 
 
             
     */
