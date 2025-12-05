@@ -89,7 +89,7 @@
                                 <div class="col-md-8">
                                     <div class="card-body"> <!-- ac. card content ie name, ac no. etc inside this div -->
                                         <h5 class="card-body-title mb-3">Jane H Middleton</h5>
-                                        <p class="card-text mb-1">Account Number: <span id="account-num-text"> </span><i class="fa-solid fa-eye" id="see-account-number"></i></p> <!--font awesome icon in this para-->
+                                        <p class="card-text mb-1">Account Number: <span id="account-num-text">*********316</span><i class="fa-solid fa-eye" id="see-account-number"></i></p> <!--font awesome icon in this para-->
                                         <p class="card-text mb-3">Sort Code: 88-56-72</p>
                                         <p class="card-text mb-0"><small class="text-body-secondary">Account balance</small></p>
                                         <p class="card-text fs-3">£20,000.00</p>
@@ -185,43 +185,53 @@
 
                     <!--*** TRANSFER OUT PAGE *** -->
                     <div class="tab-pane fade" id="transfer-out" role="tabpanel" aria-labelledby="transfer-out-list">
-                        <h2 class="display-5">Transfer Out (Credit transaction)</h2>
-                        
-                        <div class="mb-5">
-                            <label for="exampleFormControlInput1" class="form-label">Type of transfer</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Select type from list</option>
-                                <option value=" WIRE">Wire</option>
-                                <option value="ACH">ACH</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3"> 
-                            <label for="exampleFormControlInput1" class="form-label">Account holder name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. Jane Doe">
-                        </div>
+                        <h2 class="display-5">Transfer Out (Credit)</h2>
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Sort code</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. 00-22-33">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Account number</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. 1234567890">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Amount to deposit</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="eg. £10.00">
-                        </div>
+                        <form id="send-money-form">
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Purpose of transfer</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. pay a bill">
-                        </div>
+                            <div class="mb-5">
+                                <label for="transfer-type" class="form-label">Select type of transfer</label>
+                                <select class="form-select" aria-label="Default select example" id="transfer-type">
+                                    <option value=" Wire">Wire</option>
+                                    <option value="ACH">ACH</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3"> 
+                                <label for="beneficiary-name" class="form-label">Account holder name</label>
+                                <input type="text" class="form-control" id="beneficiary-name" placeholder="eg. Jane Doe">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="beneficiary-sort-code" class="form-label">Sort code</label>
+                                <input type="text" class="form-control" id="beneficiary-sort-code" placeholder="eg. 00-22-33">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="beneficiary-account-number" class="form-label">Account number</label>
+                                <input type="text" class="form-control" id="beneficiary-account-number" placeholder="eg. 1234567890">
+                            </div>
                         
-                        <button type="button" class="btn btn-dark">Send money</button>
+                            <div class="mb-3">
+                                <label for="amount-to-transfer" class="form-label">Amount to transfer</label>
+                                <input type="text" class="form-control" id="amount-to-transfer" placeholder="eg. £32.99">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="purpose-of-transfer" class="form-label">Purpose of transfer</label>
+                                <input type="text" class="form-control" id="purpose-of-transfer" placeholder="eg. pay a bill">
+                            </div>
+                            
+                            <button type="button" class="btn btn-dark" onclick="sendMoney()">Send money</button>
+
+                            <!-- Alert -->
+                            <!--(note 'show' removed from class otherwise it always shows and see js function deposit() to add show class when visibility is required)-->
+                            <div class="alert alert-success alert-dismissible fade mt-3" role="alert" id="payment-successful">
+                                Payment successful!
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+
+                        </form> 
                     
                     </div>
 
