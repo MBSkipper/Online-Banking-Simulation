@@ -73,21 +73,27 @@
             small1.innerText = currentDateTime.toLocaleString()//'03/12/2025 09:13:25'
 
             const small2 = document.createElement('small')
-            small2.innerText = `Balance: £${balance}`
+            small2.innerText = `Available Balance: £${balance.toFixed(2)}`
             
             lastPart.append(small1, small2)
 
             listGroupItem.append(topPart, middlePart, lastPart)
-            transactionList.append(listGroupItem)
 
-            // 3. Show alert - show class added to alert to show it on screen
-            document.getElementById('deposit-successful').classList.add('show') //- original demo code
+            //-- keeps latest transaction on top of list
+            const existingList = transactionList.innerHTML //makes const existingList comprise all the existing transacn in list
+            transactionList.innerHTML = '' //this action empties the existing tranacn list
+            transactionList.append(listGroupItem) // this action adds the deposit just made from this form as first on the list
+            transactionList.innerHTML += existingList // this action adds the original transacn list below the deposit transacn above
+            //note using '+=' tends to add something below what is existing 
+
+
+            // 3. Show alert - shows alert on deposit screen - added each time a deposit is made
+            document.getElementById('deposit-successful').innerHTML = 
+            `<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    Deposit successful!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`
             
-            /* const alertBox = document.getElementById('deposit-successful');
-            alertBox.classList.add('show');
-            setTimeout(() => {
-                alertBox.classList.remove('show');
-                }, 3000); */
 
         }
 
@@ -138,22 +144,49 @@
             const lastPart = document.createElement('div')
             lastPart.classList.add('d-flex', 'w-100', 'justify-content-between')
 
-            /*const small1 = document.createElement('small')
-            small1.innerText = '03/12/2025 09:13:25' */
             const small1 = document.createElement('small')
             const currentDateTime = new Date()
             small1.innerText = currentDateTime.toLocaleString()
 
             const small2 = document.createElement('small')
-            small2.innerText = `Balance: £${balance}`
+            small2.innerText = `Available Balance: £${balance.toFixed(2)}`
             
             lastPart.append(small1, small2)
 
             listGroupItem.append(topPart, middlePart, lastPart)
-            transactionList.append(listGroupItem)
 
-            // 3. Show alert - show class added to alert to show it on screen
-            document.getElementById('payment-successful').classList.add('show') 
+            //-- keeps latest transaction on top of list
+            //-- note see deposit function above for notes about how this works
+            const existingList = transactionList.innerHTML
+            transactionList.innerHTML = ''
+            transactionList.append(listGroupItem)
+            transactionList.innerHTML += existingList
+
+            // 3. Show alert - adds alert on transfer out (payment) screen - added each time a payment is made
+            document.getElementById('payment-successful').innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                Payment successful!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            `
+
+            /************* Alert - full html - 
+             * for deposit
+             * <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="deposit-successful">
+                    Deposit successful!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            
+            for transfer payment
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="payment-successful">
+                Payment successful!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+
+             * ***************
+             */
 
         }
 
@@ -196,16 +229,12 @@
             </div>                                           
         </a>
 
-        alert remove after 3 sec
+        alert remove after 3 sec - removed because I could not get it to work with rest of app
             const alertBox = document.getElementById('deposit-successful');
             alertBox.classList.add('show');
                 setTimeout(() => {
                 alertBox.classList.remove('show');
                 }, 3000); 
 
-            const alertBox = document.getElementById('payment-successful');
-            alertBox.classList.add('show');
-            setTimeout(() => {
-                alertBox.classList.remove('show');
-                }, 3000);
+            
     */

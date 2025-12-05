@@ -111,30 +111,8 @@
                                     
                                     <!-- List group start - ie start of transactions list -->
                                     <div class="list-group" id="transaction-list"> <!-- Transactions summary inside this div  -->
-                                        <!--<a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Mobile Payment: West Boatyard </h5>
-                                                <div class="money fs-5 text-danger">-£675.86</div> 
-                                            </div>
-                                            <p class="mb-1">Transfer out (DEBIT)</p>
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <small>03/12/2025 09:13:25</small>
-                                                <small>Available balance: 66,666.66</small>
-                                            </div>
-                                        </a>
 
-                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Debit card transaction: Next clothing </h5>
-                                                <div class="money fs-5 text-danger">-95.25</div> 
-                                            </div>
-                                            <p class="mb-1">Transfer out (DEBIT)</p>
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <small>03/12/2025 09:13:25</small>
-                                                <small>Available balance: 66,666.66</small>
-                                            </div>                                          
-                                        </a>
-
+                                        <!--Test data - static
                                          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">Transfer from Ac 2065874532 </h5>
@@ -172,12 +150,8 @@
                         <button type="button" class="btn btn-dark" onclick="deposit()">Deposit</button>
                         <!-- End of input form-->
 
-                        <!-- Alert -->
-                        <!--(note 'show' removed from class otherwise it always shows and see js function deposit() to add show class when visibility is required)-->
-                         <div class="alert alert-success alert-dismissible fade mt-3" role="alert" id="deposit-successful">
-                             Deposit successful!
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                        <!-- Show Alert -->
+                        <div id="deposit-successful"></div>
 
                     </div>
                     
@@ -225,11 +199,8 @@
                             <button type="button" class="btn btn-dark" onclick="sendMoney()">Send money</button>
 
                             <!-- Alert -->
-                            <!--(note 'show' removed from class otherwise it always shows and see js function deposit() to add show class when visibility is required)-->
-                            <div class="alert alert-success alert-dismissible fade mt-3" role="alert" id="payment-successful">
-                                Payment successful!
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
+                            
+                            <div id="payment-successful"></div>
 
                         </form> 
                     
