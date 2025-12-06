@@ -1,4 +1,10 @@
-
+    const formatGBP = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    maximumFractionDigits: 2,
+    });
+    
+    
     const accountNumber = '2037889316'
 
     //-- Eye button --
@@ -21,8 +27,9 @@
 
     // -- Account starting balance --
     let balance = 10000
-    document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
-    
+    //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE
+    document.getElementById('account-balance').innerText = formatGBP.format(balance);
+
     // -- Start of transaction list --
     const transactionList = document.getElementById('transaction-list')
 
@@ -36,7 +43,8 @@
             
             //-- Update balance --
             balance += amountToDeposit
-            document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
+            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE
+            document.getElementById('account-balance').innerText = formatGBP.format(balance);
             
 
            /*-- 2. Create element structure using DOM Methods 
@@ -55,7 +63,8 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-success')
-            amount.innerText = `+£${amountToDeposit.toFixed(2)}`
+            //amount.innerText = `+£${amountToDeposit.toFixed(2)}` //'BALANCE`
+            amount.innerText = formatGBP.format(amountToDeposit);
             
             topPart.append(h5, amount)
 
@@ -73,7 +82,8 @@
             small1.innerText = currentDateTime.toLocaleString()//'03/12/2025 09:13:25'
 
             const small2 = document.createElement('small')
-            small2.innerText = `Available Balance: £${balance.toFixed(2)}`
+            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //BALANCE
+            small2.innerText = 'Available balance ' + formatGBP.format(balance)
             
             lastPart.append(small1, small2)
 
@@ -112,7 +122,8 @@
 
             //-- Update balance
             balance -= amountToTransfer
-            document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}`
+            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //'BALANCE'
+            document.getElementById('account-balance').innerText = formatGBP.format(balance)
 
 
            /*-- 2. Create element structure using DOM Methods 
@@ -131,7 +142,8 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-danger')
-            amount.innerText = `-£${amountToTransfer.toFixed(2)}`
+            //amount.innerText = `-£${amountToTransfer.toFixed(2)}` //'BALANCE'
+            amount.innerText = formatGBP.format(amountToTransfer);
             
             topPart.append(h5, amount)
 
@@ -149,7 +161,8 @@
             small1.innerText = currentDateTime.toLocaleString()
 
             const small2 = document.createElement('small')
-            small2.innerText = `Available Balance: £${balance.toFixed(2)}`
+            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //'BALANCE
+            small2.innerText =  'Available balance ' + formatGBP.format(balance);
             
             lastPart.append(small1, small2)
 
@@ -225,6 +238,17 @@
                 <small>Available balance: 66,666.66</small>
             </div>                                           
         </a>
+
+    -- format a number as GBP
+    const formatGBP = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    maximumFractionDigits: 2,
+    });
+
+
+// update the page:
+document.getElementById('account-balance').innerText = formatGBP.format(balance);
 
             
     */
