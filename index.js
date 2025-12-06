@@ -1,3 +1,5 @@
+    
+    // -- currency formatting  --
     const formatGBP = new Intl.NumberFormat('en-GB', {
     style: 'currency',
     currency: 'GBP',
@@ -27,7 +29,7 @@
 
     // -- Account starting balance --
     let balance = 10000
-    //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE
+    //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE ORIGINAL
     document.getElementById('account-balance').innerText = formatGBP.format(balance);
 
     // -- Start of transaction list --
@@ -43,7 +45,7 @@
             
             //-- Update balance --
             balance += amountToDeposit
-            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE
+            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //BALANCE ORIGINAL
             document.getElementById('account-balance').innerText = formatGBP.format(balance);
             
 
@@ -63,7 +65,7 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-success')
-            //amount.innerText = `+£${amountToDeposit.toFixed(2)}` //'BALANCE`
+            //amount.innerText = `+£${amountToDeposit.toFixed(2)}` //'BALANCE ORIGINAL`
             amount.innerText = formatGBP.format(amountToDeposit);
             
             topPart.append(h5, amount)
@@ -82,7 +84,7 @@
             small1.innerText = currentDateTime.toLocaleString()//'03/12/2025 09:13:25'
 
             const small2 = document.createElement('small')
-            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //BALANCE
+            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //BALANCE ORIGINAL
             small2.innerText = 'Available balance ' + formatGBP.format(balance)
             
             lastPart.append(small1, small2)
@@ -122,7 +124,7 @@
 
             //-- Update balance
             balance -= amountToTransfer
-            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //'BALANCE'
+            //document.getElementById('account-balance').innerText = `£${balance.toFixed(2)}` //'BALANCE ORIGINAL'
             document.getElementById('account-balance').innerText = formatGBP.format(balance)
 
 
@@ -142,7 +144,7 @@
 
             const amount = document.createElement('div')
             amount.classList.add('money', 'fs-5', 'text-danger')
-            //amount.innerText = `-£${amountToTransfer.toFixed(2)}` //'BALANCE'
+            //amount.innerText = `-£${amountToTransfer.toFixed(2)}` //'BALANCE ORIGINAL'
             amount.innerText = formatGBP.format(amountToTransfer);
             
             topPart.append(h5, amount)
@@ -161,7 +163,7 @@
             small1.innerText = currentDateTime.toLocaleString()
 
             const small2 = document.createElement('small')
-            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //'BALANCE
+            //small2.innerText = `Available Balance: £${balance.toFixed(2)}` //'BALANCE ORIGINAL'
             small2.innerText =  'Available balance ' + formatGBP.format(balance);
             
             lastPart.append(small1, small2)
@@ -183,9 +185,6 @@
             </div>`
             
         }
-
-        
-
 
    /* NOTES / COPIES OF REQUIRED CODE
    
@@ -246,9 +245,8 @@
     maximumFractionDigits: 2,
     });
 
-
-// update the page:
-document.getElementById('account-balance').innerText = formatGBP.format(balance);
+    // to update the page:
+    document.getElementById('account-balance').innerText = formatGBP.format(balance);
 
             
     */
